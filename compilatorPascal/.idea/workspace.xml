@@ -13,28 +13,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56c04e2f-f8fd-4cfc-842a-c2fb58d24bd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/GrammarFile.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFile.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFile.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileBaseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileBaseVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileLexer.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileLexer.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileVisitor.java" afterDir="false" />
+    <list default="true" id="56c04e2f-f8fd-4cfc-842a-c2fb58d24bd9" name="Default Changelist" comment="sys functions без обработки ошибок парсинга">
+      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/LexerFile.g4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/BaseVisitorImplSysFunc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFile.interp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFile.tokens" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileBaseListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileBaseVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileLexer.interp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileLexer.tokens" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antlr/GrammarFile.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antlr/GrammarFile.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFile.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFile.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gen/antlr/GrammarFileLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genAntlr/GrammarFileVisitor.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,27 +78,30 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\compilator\compilatorPascal\src\main\java\gen\antlr" />
       <recent name="C:\Users\PC\Desktop\compilator\compilatorPascal\src\main\java" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="compilatorPascal" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -104,8 +112,20 @@
       <option name="presentableId" value="Default" />
       <updated>1616951475575</updated>
       <workItem from="1616951476622" duration="61000" />
-      <workItem from="1616951563587" duration="1159000" />
+      <workItem from="1616951563587" duration="1283000" />
+      <workItem from="1616952938064" duration="10000" />
+      <workItem from="1617046741715" duration="13122000" />
+      <workItem from="1617059908023" duration="338000" />
+      <workItem from="1617060256746" duration="5018000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1616952735618</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616952735618</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,23 +141,76 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="96" key="#Project_Structure" timestamp="1616951596948">
+    <state x="0" y="96" key="#Project_Structure" timestamp="1617064497201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="96" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1616951596948" />
-    <state x="529" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1616952572736">
+    <state x="0" y="96" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1617064497201" />
+    <state x="529" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1617061040743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="529" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616952572736" />
+    <state x="529" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1617061040743" />
     <state x="421" y="388" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1616951967318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="421" y="388" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1616951967318" />
-    <state x="415" y="276" key="FileChooserDialogImpl" timestamp="1616951922977">
+    <state x="321" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617062843937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="415" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616951922977" />
+    <state x="321" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617062843937" />
+    <state x="338" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1617052048206">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="338" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1617052048206" />
+    <state x="415" y="276" key="FileChooserDialogImpl" timestamp="1617060879260">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="415" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617060879260" />
+    <state width="1232" height="344" key="GridCell.Tab.0.bottom" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.0.center" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.0.left" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.0.right" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.1.bottom" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.1.center" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.1.left" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state width="1232" height="344" key="GridCell.Tab.1.right" timestamp="1617065278056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1232" height="344" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617065278056" />
+    <state x="171" y="258" key="IDE.errors.dialog" timestamp="1617047773739">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="171" y="258" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617047773739" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616952743362">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1616952743362" />
   </component>
 </project>
