@@ -18,7 +18,7 @@ public class ParserValues {
     }
 
     public int parseString(String symbol) {
-        Pattern pattern = Pattern.compile("[\\d]+");
+        Pattern pattern = Pattern.compile("-?[\\d]+");
         Matcher matcher = pattern.matcher(symbol);
         List<Integer> numbers = new ArrayList<>();
         while (matcher.find()) {

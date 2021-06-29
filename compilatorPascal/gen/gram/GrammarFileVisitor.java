@@ -1,4 +1,4 @@
-// Generated from C:/Users/PC/Desktop/compilatorPascal/src/main/java/gram\GrammarFile.g4 by ANTLR 4.9.1
+// Generated from C:/Users/PC/Desktop/eeee/compilator/compilatorPascal/src/main/java/gram\GrammarFile.g4 by ANTLR 4.9.1
 package gram;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 

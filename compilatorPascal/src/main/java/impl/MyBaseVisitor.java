@@ -3,10 +3,17 @@ package impl;
 import generated.GrammarFileBaseVisitor;
 import generated.GrammarFileParser;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
+import org.antlr.v4.runtime.tree.ParseTree;
 
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
+
+
+
+
     public Object visitResultExp(GrammarFileParser.ResultExpContext ctx) {
         Object firstExp = visit(ctx.simpleExpression(0));
         Object secondExp = visit(ctx.simpleExpression(1));
@@ -134,6 +141,10 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
     }
 
     @Override
+    public Object visitMultExpr(GrammarFileParser.MultExprContext ctx) {
+        return visit(ctx.children.get(1));
+    }
+    @Override
     public Object visitSmplExpression(GrammarFileParser.SmplExpressionContext ctx) {
         Double total = 0.0;
         if (ctx.term(0).getText().matches("[a-zA-Z][a-zA-Z0-9_]*(\\Q[\\E[0-9]+\\Q]\\E)?")) {
@@ -141,15 +152,18 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
         } else if (ctx.term(0).getText().startsWith("\"")) {
             return ctx.term(0).getText();
         } else {
+            if (ctx.children.get(0).getText().equals("-")) {
+                ParseTree s = ctx.children.get(1);
+                ctx.children.set(1, s);
+            }
             total = Double.parseDouble(visit(ctx.term(0)).toString());
         }
         int pos = 1;
         for (GrammarFileParser.AddopContext add : ctx.addop()) {
-
             if (add.getText().equals("+")) {
-                total += Double.parseDouble(ctx.term(pos).getText());
+                total += Double.parseDouble(visit(ctx.term(pos)).toString());
             } else if (add.getText().equals("-")) {
-                total -= Double.parseDouble(ctx.term(pos).getText());
+                total -= Double.parseDouble(visit(ctx.term(pos)).toString());
             }
             pos++;
         }
@@ -164,13 +178,31 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
         } else if (ctx.factor(0).getText().startsWith("\"")) {
             return ctx.factor(0).getText();
         } else {
-            double total = Double.parseDouble(ctx.factor(0).getText());
-            int pos = 1;
+            double total;
+            int pos = 1 ;
+            if (ctx.factor().get(0).children.size() == 2) {
+                total = Double.parseDouble(ctx.factor().get(0).children.get(1).getText());
+                if(ctx.factor(0).children.get(0).getText().equals("-")){
+                    total *=-1;
+                }
+            } else {
+                total = Double.parseDouble(ctx.factor(0).getText());
+            }
             for (GrammarFileParser.MultopContext add : ctx.multop()) {
                 if (add.getText().equals("*")) {
-                    total *= Double.parseDouble(ctx.factor(pos).getText());
-                } else if (add.getText().equals("div")) {
-                    total /= Double.parseDouble(ctx.factor(pos).getText());
+                    Object c = visit(ctx.factor(pos));
+                    if (c == null) {
+                        total *= Double.parseDouble(ctx.factor(pos).getText());
+                    } else {
+                        total *= Double.parseDouble(c.toString());
+                    }
+                } else if (add.getText().equals("/")) {
+                    Object c = visit(ctx.factor(pos));
+                    if (c == null) {
+                        total /= Double.parseDouble(ctx.factor(pos).getText());
+                    } else {
+                        total /= Double.parseDouble(c.toString());
+                    }
                 }
                 pos++;
             }

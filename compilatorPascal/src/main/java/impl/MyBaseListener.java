@@ -6,8 +6,12 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
+import java.util.Stack;
+
 
 public class MyBaseListener extends GrammarFileBaseListener {
+
+
     @Override
     public void enterMyStartingRule(GrammarFileParser.MyStartingRuleContext ctx) {
         super.enterMyStartingRule(ctx);
@@ -197,6 +201,7 @@ public class MyBaseListener extends GrammarFileBaseListener {
     @Override
     public void enterVarID(GrammarFileParser.VarIDContext ctx) {
         super.enterVarID(ctx);
+
     }
 
     @Override

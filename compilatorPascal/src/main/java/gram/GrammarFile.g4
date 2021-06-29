@@ -8,8 +8,7 @@ myStartingRule : program+ ;
  A multi-line Java-like comment
  */
 
-program :
-PROGRAM ID';' block DOT #progrm;
+program : PROGRAM ID';' block DOT #progrm;
 
 block : vardeclpart? procdeclpart? statementpart? #blockProgrm ;
 
@@ -37,9 +36,9 @@ writestatement : WRITE '('expression (',' expression)*')' #writeStmt;
 
 // EXPRESSION
 expression : simpleExpression #resultSimpleExp | simpleExpression relationop=('=' | '<' | '>' | '<>' | '<=' | '>=') simpleExpression #resultExp;
-simpleExpression : ('+' | '-')? term (addop term)* #smplExpression;
+simpleExpression :   term (addop term)* #smplExpression;
 term : factor (multop factor)* #termExpression;
-factor: variable #varExpr | constant #constantExpr| '('expression')' #multExpr | NOT factor #notExpression;
+factor: variable #varExpr |( MINUS )? constant #constantExpr| '('expression')' #multExpr | NOT factor #notExpression;
 constant : DIGIT ('.' DIGIT)* | STR | ID | TRUE | FALSE;
 addop : PLUS | MINUS | OR;
 multop : DIV | MULT | AND;
@@ -89,7 +88,6 @@ fragment Y:('y'|'Y');
 fragment Z:('z'|'Z');
 
 FOR : F O R;
-DIV : D I V ;
 OR  : O R ;
 AND : A N D ;
 NOT : N O T ;
@@ -108,7 +106,7 @@ ARRAY : A R R A Y;
 PROCEDURE : P R O C E D U R E;
 PROGRAM : P R O G R A M;
 
-
+DIV: '/';
 PLUS : '+';
 MINUS : '-';
 MULT : '*';
