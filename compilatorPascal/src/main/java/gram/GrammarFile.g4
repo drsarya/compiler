@@ -21,8 +21,11 @@ indexrange : DIGIT'..'DIGIT #rangeIndexVar;
 simpletype : (INTEGER|STRING|FLOAT|BOOLEAN) #idVar;
 
 // PROCEDURE DECLARATION
-procdeclpart : (procdecl';')*;
-procdecl : PROCEDURE ID  block #procDeclFunc;
+procdeclpart : (procdecl)*;
+procdecl : PROCEDURE ID (formalParameterList)? ';' block ';'#procDeclFunc;
+formalParameterList: OP parameterGroup (',' parameterGroup)* CP #procVarDeclFunc;
+parameterGroup : identifierList COLON simpletype ;
+identifierList: ID (COMMA ID)*;
 
 // STATEMENT DECLARATION
 statementpart : (cmpstatement)* #stmt;
@@ -30,7 +33,10 @@ cmpstatement : BEGIN statement';' (statement';')* END #mainStmt;
 statement : smpstatement #smpStmt| stcstatement #stcStmt;
 smpstatement: assstatement #attribStmt| procstatement #stmtID| readstatement #resultReadStmt| writestatement #resultWriteStmt;
 assstatement : variable ':=' expression #stmtAttrib;
-procstatement : ID #idStmt;
+
+procstatement : ID (OP parameterList CP)?#idStmt ;
+parameterList : expression (COMMA expression)*;
+
 readstatement : READ '('variable (',' variable)*')' #readStmt;
 writestatement : WRITE '('expression (',' expression)*')' #writeStmt;
 

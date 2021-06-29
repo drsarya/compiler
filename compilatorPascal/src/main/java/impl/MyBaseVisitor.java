@@ -2,16 +2,13 @@ package impl;
 
 import generated.GrammarFileBaseVisitor;
 import generated.GrammarFileParser;
+import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
-
-
 
 
     public Object visitResultExp(GrammarFileParser.ResultExpContext ctx) {
@@ -89,8 +86,14 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
     public Object visitWriteStmt(GrammarFileParser.WriteStmtContext ctx) {
         try {
             for (GrammarFileParser.ExpressionContext value : ctx.expression()) {
+                Object c = visit(value);
+                String valor = "";
 
-                String valor = visit(value).toString();
+                if (c == null) {
+                    valor = "NULL";
+                } else {
+                    valor = c.toString();
+                }
                 if (valor.startsWith("\"")) {
                     valor = valor.subSequence(1, valor.length() - 1).toString();
                 }
@@ -122,18 +125,71 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
     }
 
     @Override
+    public Object visitParameterGroup(GrammarFileParser.ParameterGroupContext ctx) {
+        List<VariableModel> variableModels = new ArrayList<>();
+        for (int i = 0; i < ctx.identifierList().ID().size(); i++) {
+            variableModels.add(new VariableModel(ctx.identifierList().ID().get(i).getText(), ctx.simpletype().getText()));
+        }
+        return variableModels;
+
+    }
+
+    @Override
     public Object visitProcDeclFunc(GrammarFileParser.ProcDeclFuncContext ctx) {
         String nameMethod = ctx.ID().toString();
         if (nameMethod != null) {
-            SymbolsTable.getInstance().addFunction(nameMethod);
+            List<VariableModel> variableModelList = new ArrayList<>();
+            List<VariableModel> models = new ArrayList<>();
+            if (ctx.formalParameterList() != null) {
+                models = (List<VariableModel>) visit(ctx.formalParameterList());
+                //  variableModelList.add(models);
+            }
+            GrammarFileParser.BlockProgrmContext s = (GrammarFileParser.BlockProgrmContext) ctx.block();
+            s.statementpart();
+            FunctionModel functionModel = new FunctionModel(nameMethod, models, s.statementpart());
+            SymbolsTable.getInstance().addFunction(functionModel);
         }
         return 0d;
     }
 
     @Override
+    public Object visitProcVarDeclFunc(GrammarFileParser.ProcVarDeclFuncContext ctx) {
+        List<VariableModel> variableModels = new ArrayList<>();
+        for (int i = 0; i < ctx.parameterGroup().size(); i++) {
+            List<VariableModel> ss = (List<VariableModel>) visit(ctx.parameterGroup(i));
+            variableModels.addAll(ss);
+        }
+
+        return variableModels;
+    }
+
+    @Override
+    public Object visitStmt(GrammarFileParser.StmtContext ctx) {
+        return super.visitStmt(ctx);
+    }
+
+    @Override
+    public Object visitMainStmt(GrammarFileParser.MainStmtContext ctx) {
+        return super.visitMainStmt(ctx);
+    }
+
+    @Override
     public Object visitIdStmt(GrammarFileParser.IdStmtContext ctx) {
         String nameMethod = ctx.ID().toString();
-        if (SymbolsTable.getInstance().getFunction(nameMethod) != null) {
+        int currentSize = ctx.parameterList().expression().size();
+        int expectedSize = ctx.parameterList().expression().size();
+        FunctionModel functionModel = SymbolsTable.getInstance().getFunction(nameMethod);
+        if (expectedSize != currentSize)
+            throw new ParseCancellationException("Ошибка интерпретации: количество переданных аргументов : " + currentSize + " ,ожидалось: " + expectedSize);
+        functionModel.setName();
+        for (int i = 0; i < ctx.parameterList().expression().size(); i++) {
+            Object[] varData = new Object[2];
+            varData[0] = functionModel.variableList.get(i).getType();
+            varData[1] = visit(ctx.parameterList().expression(i));
+            SymbolsTable.getInstance().addSymbol(functionModel.variableList.get(i).getName(), varData);
+        }
+        if (functionModel != null) {
+            visit(functionModel.programContext);
         } else {
             throw new ParseCancellationException("Ошибка интерпретации: метод не найден");
         }
@@ -144,11 +200,17 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
     public Object visitMultExpr(GrammarFileParser.MultExprContext ctx) {
         return visit(ctx.children.get(1));
     }
+
     @Override
     public Object visitSmplExpression(GrammarFileParser.SmplExpressionContext ctx) {
         Double total = 0.0;
         if (ctx.term(0).getText().matches("[a-zA-Z][a-zA-Z0-9_]*(\\Q[\\E[0-9]+\\Q]\\E)?")) {
-            total = Double.parseDouble(visit(ctx.term(0)).toString());
+            Object value = visit(ctx.term(0));
+            if (value == null) {
+                total = null;
+            } else {
+                total = Double.parseDouble(value.toString());
+            }
         } else if (ctx.term(0).getText().startsWith("\"")) {
             return ctx.term(0).getText();
         } else {
@@ -179,11 +241,11 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
             return ctx.factor(0).getText();
         } else {
             double total;
-            int pos = 1 ;
+            int pos = 1;
             if (ctx.factor().get(0).children.size() == 2) {
                 total = Double.parseDouble(ctx.factor().get(0).children.get(1).getText());
-                if(ctx.factor(0).children.get(0).getText().equals("-")){
-                    total *=-1;
+                if (ctx.factor(0).children.get(0).getText().equals("-")) {
+                    total *= -1;
                 }
             } else {
                 total = Double.parseDouble(ctx.factor(0).getText());
@@ -219,8 +281,17 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
     }
 
     public Object visitVarID(GrammarFileParser.VarIDContext ctx) {
+        RuleContext context = ctx.parent;
+        StringBuilder name = new StringBuilder(ctx.getText());
+        while (context.parent != null) {
+            if (context instanceof GrammarFileParser.ProcDeclFuncContext) {
+                GrammarFileParser.ProcDeclFuncContext contextProg = (GrammarFileParser.ProcDeclFuncContext) context;
+                name.insert(0, contextProg.ID());
+            }
+            context = context.parent;
 
-        return SymbolsTable.getInstance().getSymbol(ctx.getText())[1];
+        }
+        return SymbolsTable.getInstance().getSymbol(name.toString())[1];
     }
 
 
@@ -251,6 +322,7 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
         return 0d;
     }
 
+
     public Object[] visitArrayVarType(GrammarFileParser.ArrayVarTypeContext ctx) {
         return (Object[]) visit(ctx.arraytype());
     }
@@ -273,16 +345,20 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
 
         if (SymbolsTable.getInstance().getSymbol(ctx.variable().getText()) != null) {
             Object value = visit(ctx.expression());
-            if (value == null) {
-                value = ctx.expression().getText();
-            }
+//            if (value == null) {
+//                value = ctx.expression().getText();
+//            }
             Object[] var = SymbolsTable.getInstance().getSymbol(ctx.variable().getText());
             if (var[0].equals("float")) {
                 var[1] = Float.parseFloat(value.toString());
             } else if (var[0].equals("integer")) {
-               // var[1] = (int)Double.parseDouble(value.toString());
-               int number = ParserValues.getInstance().parseString(value.toString());
-                 var[1] = number;
+                // var[1] = (int)Double.parseDouble(value.toString());
+                //   if()
+                if (value != null) {
+                    int number = ParserValues.getInstance().parseString(value.toString());
+                    var[1] = number;
+                }
+
             } else if (var[0].equals("boolean")) {
                 if (value.toString().equals("true") || value.toString().equals("false")) {
                     var[1] = value;
@@ -300,10 +376,7 @@ public class MyBaseVisitor extends GrammarFileBaseVisitor<Object> {
         } else {
             throw new ParseCancellationException("Ошибка интерпретации: переменная не объявлена!");
         }
-
-
         return 0;
-
     }
 }
 

@@ -148,6 +148,38 @@ public interface GrammarFileListener extends ParseTreeListener {
 	 */
 	void exitProcDeclFunc(GrammarFileParser.ProcDeclFuncContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code procVarDeclFunc}
+	 * labeled alternative in {@link GrammarFileParser#formalParameterList}.
+	 * @param ctx the parse tree
+	 */
+	void enterProcVarDeclFunc(GrammarFileParser.ProcVarDeclFuncContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code procVarDeclFunc}
+	 * labeled alternative in {@link GrammarFileParser#formalParameterList}.
+	 * @param ctx the parse tree
+	 */
+	void exitProcVarDeclFunc(GrammarFileParser.ProcVarDeclFuncContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarFileParser#parameterGroup}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameterGroup(GrammarFileParser.ParameterGroupContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarFileParser#parameterGroup}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameterGroup(GrammarFileParser.ParameterGroupContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarFileParser#identifierList}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifierList(GrammarFileParser.IdentifierListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarFileParser#identifierList}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifierList(GrammarFileParser.IdentifierListContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code stmt}
 	 * labeled alternative in {@link GrammarFileParser#statementpart}.
 	 * @param ctx the parse tree
@@ -267,6 +299,16 @@ public interface GrammarFileListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIdStmt(GrammarFileParser.IdStmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link GrammarFileParser#parameterList}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameterList(GrammarFileParser.ParameterListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GrammarFileParser#parameterList}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameterList(GrammarFileParser.ParameterListContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code readStmt}
 	 * labeled alternative in {@link GrammarFileParser#readstatement}.

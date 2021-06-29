@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 public class SymbolsTable {
     private HashMap<String, Object[]> symbols;
-    private HashMap<String, String> functions;
+    private HashMap<String, FunctionModel> functions;
 
     protected SymbolsTable() {
         symbols = new HashMap<>();
-        functions= new HashMap<>();
+        functions = new HashMap<>();
     }
 
     private static SymbolsTable INSTANCE;
@@ -21,18 +21,19 @@ public class SymbolsTable {
 
     public void addSymbol(String symbol, Object[] value) {
         if (symbols.containsKey(symbol)) {
-            throw new IllegalArgumentException("Повторяющееся имя переменной"+ symbol);
+            throw new IllegalArgumentException("Повторяющееся имя переменной" + symbol);
         }
         symbols.put(symbol, value);
     }
 
-    public void addFunction(String symbol) {
-        if (functions.containsKey(symbol)) {
-            throw new IllegalArgumentException("Повторяющееся имя метода"+ symbol);
+    public void addFunction(FunctionModel model) {
+        if (functions.containsKey(model.name)) {
+            throw new IllegalArgumentException("Повторяющееся имя метода" + model.name);
         }
-        functions.put(symbol,"method");
+        functions.put(model.name, model);
     }
-    public String getFunction(String symbol ) {
+
+    public FunctionModel getFunction(String symbol) {
         if (functions.containsKey(symbol)) {
             return functions.get(symbol);
         }

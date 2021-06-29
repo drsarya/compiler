@@ -160,6 +160,42 @@ public class GrammarFileBaseListener implements GrammarFileListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterProcVarDeclFunc(GrammarFileParser.ProcVarDeclFuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProcVarDeclFunc(GrammarFileParser.ProcVarDeclFuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParameterGroup(GrammarFileParser.ParameterGroupContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParameterGroup(GrammarFileParser.ParameterGroupContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIdentifierList(GrammarFileParser.IdentifierListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIdentifierList(GrammarFileParser.IdentifierListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStmt(GrammarFileParser.StmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -275,6 +311,18 @@ public class GrammarFileBaseListener implements GrammarFileListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIdStmt(GrammarFileParser.IdStmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParameterList(GrammarFileParser.ParameterListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParameterList(GrammarFileParser.ParameterListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

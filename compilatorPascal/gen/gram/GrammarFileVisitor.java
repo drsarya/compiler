@@ -93,6 +93,25 @@ public interface GrammarFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProcDeclFunc(GrammarFileParser.ProcDeclFuncContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code procVarDeclFunc}
+	 * labeled alternative in {@link GrammarFileParser#formalParameterList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProcVarDeclFunc(GrammarFileParser.ProcVarDeclFuncContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarFileParser#parameterGroup}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameterGroup(GrammarFileParser.ParameterGroupContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarFileParser#identifierList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdentifierList(GrammarFileParser.IdentifierListContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code stmt}
 	 * labeled alternative in {@link GrammarFileParser#statementpart}.
 	 * @param ctx the parse tree
@@ -162,6 +181,12 @@ public interface GrammarFileVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIdStmt(GrammarFileParser.IdStmtContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link GrammarFileParser#parameterList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameterList(GrammarFileParser.ParameterListContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code readStmt}
 	 * labeled alternative in {@link GrammarFileParser#readstatement}.
