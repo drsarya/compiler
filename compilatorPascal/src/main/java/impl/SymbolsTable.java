@@ -1,6 +1,7 @@
 package impl;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class SymbolsTable {
     private HashMap<String, Object[]> symbols;
@@ -27,22 +28,31 @@ public class SymbolsTable {
     }
 
     public void addFunction(FunctionModel model) {
-        if (functions.containsKey(model.name)) {
-            throw new IllegalArgumentException("Повторяющееся имя метода" + model.name);
+        if (functions.containsKey(model.getName())) {
+            throw new IllegalArgumentException("Повторяющееся имя метода" + model.getName());
         }
-        functions.put(model.name, model);
+        functions.put(model.getName(), model);
     }
 
     public FunctionModel getFunction(String symbol) {
         if (functions.containsKey(symbol)) {
             return functions.get(symbol);
+        } else {
+            throw new IllegalArgumentException("Функция не найдена");
         }
-        return null;
     }
+
     public Object[] getSymbol(String symbol) {
         if (symbols.containsKey(symbol)) {
             return symbols.get(symbol);
+        }else {
+            throw new IllegalArgumentException("Переменная не найдена");
         }
-        return null;
+    }
+
+    public void removeVariables(List<VariableModel> variableList) {
+        for (int i = 0; i < variableList.size(); i++) {
+            symbols.remove(variableList.get(i).getName());
+        }
     }
 }

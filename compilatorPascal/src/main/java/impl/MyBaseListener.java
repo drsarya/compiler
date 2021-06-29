@@ -21,14 +21,14 @@ public class MyBaseListener extends GrammarFileBaseListener {
     @Override
     public void enterProgrm(GrammarFileParser.ProgrmContext ctx) {
         super.enterProgrm(ctx);
-        if(ctx.exception!=null) printException("program",ctx.start.getLine(),ctx.start.getCharPositionInLine());
+        if (ctx.exception != null) printException("program", ctx.start.getLine(), ctx.start.getCharPositionInLine());
     }
 
 
     @Override
     public void enterBlockProgrm(GrammarFileParser.BlockProgrmContext ctx) {
         super.enterBlockProgrm(ctx);
-        if(ctx.exception!=null) printException("block",ctx.start.getLine(),ctx.start.getCharPositionInLine());
+        if (ctx.exception != null) printException("block", ctx.start.getLine(), ctx.start.getCharPositionInLine());
     }
 
     @Override
@@ -40,7 +40,8 @@ public class MyBaseListener extends GrammarFileBaseListener {
     @Override
     public void enterVarDeclaration(GrammarFileParser.VarDeclarationContext ctx) {
         super.enterVarDeclaration(ctx);
-        if(ctx.exception!=null) printException("variable declaration",ctx.start.getLine(),ctx.start.getCharPositionInLine());
+        if (ctx.exception != null)
+            printException("variable declaration", ctx.start.getLine(), ctx.start.getCharPositionInLine());
     }
 
     @Override
@@ -134,7 +135,8 @@ public class MyBaseListener extends GrammarFileBaseListener {
         System.out.println("Entered read statement");
         for (GrammarFileParser.VariableContext item :
                 ctx.variable()) {
-            if (item.exception != null) printException("read",item.start.getLine(),item.start.getCharPositionInLine());
+            if (item.exception != null)
+                printException("read", item.start.getLine(), item.start.getCharPositionInLine());
         }
     }
 
@@ -262,8 +264,8 @@ public class MyBaseListener extends GrammarFileBaseListener {
     @Override
     public void enterEveryRule(ParserRuleContext ctx) {
         super.enterEveryRule(ctx);
-        if(ctx.exception!=null)
-            printException("variable declaration",ctx.start.getLine(),ctx.start.getCharPositionInLine());
+        if (ctx.exception != null)
+            printException("variable declaration", ctx.start.getLine(), ctx.start.getCharPositionInLine());
     }
 
     @Override
@@ -274,11 +276,11 @@ public class MyBaseListener extends GrammarFileBaseListener {
     @Override
     public void visitErrorNode(ErrorNode node) {
         super.visitErrorNode(node);
-        printException(node.getText(),node.getSymbol().getLine(),node.getSymbol().getCharPositionInLine());
+        printException(node.getText(), node.getSymbol().getLine(), node.getSymbol().getCharPositionInLine());
     }
 
     private void printException(String statement, int line, int pos) {
-        System.out.printf("There's error at %s statement at %d line, %d position\n",statement,line,pos);
+        System.out.printf("There's error at %s statement at %d line, %d position\n", statement, line, pos);
         System.exit(1);
     }
 }
