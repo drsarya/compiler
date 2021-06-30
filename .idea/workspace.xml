@@ -2,39 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277ac52f-6aa0-4fe3-8af5-44fca45226a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/MMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFile.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFile.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileBaseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileBaseVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileLexer.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileLexer.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/generated/GrammarFileVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/gram/GrammarFile.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/gram/LexerFile.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/MyBaseVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/ParserValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/SymbolsTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/compilatorPascal/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/FunctionModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/VariableModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compilatorPascal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/compilatorPascal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/compilatorPascal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/antlr/GrammarFile.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/antlr/LexerFile.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/BaseVisitorImplSysFunc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFile.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFile.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/src/main/java/gen/antlr/GrammarFileVisitor.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,15 +31,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,10 +57,17 @@
       <option name="presentableId" value="Default" />
       <updated>1624442382500</updated>
       <workItem from="1624442383694" duration="8000" />
+      <workItem from="1625076982509" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="700" y="169" key="SettingsEditor" timestamp="1625077011766">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="700" y="169" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625077011766" />
   </component>
 </project>
