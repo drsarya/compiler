@@ -1,0 +1,33 @@
+program   sdsd    ;
+var result,initial,final : integer ;
+ procedure func1(a:integer, b:string);
+ begin
+ write(b);
+ write("function");
+ end;
+begin
+    func1(1,2+20);
+    write("End value");
+    result := final;
+    write(result);
+    func1(1,2+40);
+    func1(1,0);
+    write("Start value");
+    read(initial);
+    write("End value");
+    read(final);
+
+    result := initial;
+    while result < final do
+        begin
+            result := result + 1;
+            write(result);
+        end;
+
+    for(  ; result > initial ; result := result - 1)
+        begin
+            write(result);
+        end;
+    result:=-5+10+78-5+100*(10/5)+100*-1;
+    write(result);
+end.

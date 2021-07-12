@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.tree.xpath.XPath;
 
 import java.io.IOException;
 
-public class MMain {
+public class Main {
     public static void main(String[] args) throws IOException {
         ANTLRInputStream input = new ANTLRFileStream("input.txt");
         GrammarFileLexer lexer = new GrammarFileLexer(input);

@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="277ac52f-6aa0-4fe3-8af5-44fca45226a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/FunctionModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compilatorPascal/src/main/java/impl/VariableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compilatorPascal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/compilatorPascal/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="56c04e2f-f8fd-4cfc-842a-c2fb58d24bd9" name="Default Changelist" comment="Рефакторинг" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="tkachenko" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -21,19 +42,58 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1uLQRVvU5XjJt3RgzLcCsZ1MyLF" />
+  <component name="ProjectId" id="1qOXBMxu9KHTppM68mr73dv9Rcv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/generated" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\eeee\compilator\compilatorPascal" />
+      <recent name="C:\Users\PC\Desktop\compilatorPascal\src\main\java\gram" />
+      <recent name="C:\Users\PC\Desktop\compilator\compilatorPascal\src\main\java\antlr" />
+      <recent name="C:\Users\PC\Desktop\compilator\compilatorPascal\src\main\java\gen\antlr" />
+      <recent name="C:\Users\PC\Desktop\compilator\compilatorPascal\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\eeee\compilator\compilatorPascal\src\main\java\generated" />
+      <recent name="C:\Users\PC\Desktop\compilatorPascal\src\main\java\generated" />
+      <recent name="C:\Users\PC\Desktop\compilatorPascal\src\main\java\impl" />
+      <recent name="C:\Users\PC\Desktop\compilatorPascal\src\main\java\gram" />
+      <recent name="C:\Users\PC\Desktop\compilatorPascal\src\main\java\gen\antlr" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MMain">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="generated.Main" />
+      <module name="compilatorPascal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="compilator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -47,27 +107,188 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MMain" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="277ac52f-6aa0-4fe3-8af5-44fca45226a6" name="Default Changelist" comment="" />
-      <created>1624442382500</created>
+      <changelist id="56c04e2f-f8fd-4cfc-842a-c2fb58d24bd9" name="Default Changelist" comment="" />
+      <created>1616951475575</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1624442382500</updated>
-      <workItem from="1624442383694" duration="8000" />
-      <workItem from="1625076982509" duration="31000" />
+      <updated>1616951475575</updated>
+      <workItem from="1616951476622" duration="61000" />
+      <workItem from="1616951563587" duration="1283000" />
+      <workItem from="1616952938064" duration="10000" />
+      <workItem from="1617046741715" duration="13122000" />
+      <workItem from="1617059908023" duration="338000" />
+      <workItem from="1617060256746" duration="5018000" />
+      <workItem from="1624391697881" duration="2504000" />
+      <workItem from="1624427795089" duration="890000" />
+      <workItem from="1624428770837" duration="974000" />
+      <workItem from="1624429775231" duration="1311000" />
+      <workItem from="1624432851506" duration="7566000" />
+      <workItem from="1624441343892" duration="152000" />
+      <workItem from="1624441626699" duration="764000" />
+      <workItem from="1624882108448" duration="19000" />
+      <workItem from="1624990440950" duration="13056000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1616952735618</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616952735618</updated>
+    </task>
+    <task id="LOCAL-00002" summary="добавление  проверки типа переменной и значения . наличия метода и имени переменной в памяти.">
+      <created>1624441404868</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624441404868</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <MESSAGE value="добавление  проверки типа переменной и значения . наличия метода и имени переменной в памяти." />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление  проверки типа переменной и значения . наличия метода и имени переменной в памяти." />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="700" y="169" key="SettingsEditor" timestamp="1625077011766">
+    <state x="0" y="96" key="#Project_Structure" timestamp="1617064497201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="700" y="169" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625077011766" />
+    <state x="0" y="96" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1617064497201" />
+    <state x="1114" y="290" key="#com.intellij.ide.util.MemberChooser" timestamp="1625002610405">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1114" y="290" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1625002610405" />
+    <state x="421" y="388" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1616951967318">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="421" y="388" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1616951967318" />
+    <state x="321" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624990462798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="321" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1624990462798" />
+    <state x="338" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1617052048206">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="338" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1617052048206" />
+    <state x="415" y="276" key="FileChooserDialogImpl" timestamp="1624991055795">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="415" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1624991055795" />
+    <state width="1877" height="328" key="GridCell.Tab.0.bottom" timestamp="1625003832685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832685" />
+    <state width="1877" height="328" key="GridCell.Tab.0.center" timestamp="1625003832684">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832684" />
+    <state width="1877" height="328" key="GridCell.Tab.0.left" timestamp="1625003832684">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832684" />
+    <state width="1877" height="328" key="GridCell.Tab.0.right" timestamp="1625003832685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832685" />
+    <state width="1877" height="328" key="GridCell.Tab.1.bottom" timestamp="1625003832685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832685" />
+    <state width="1877" height="328" key="GridCell.Tab.1.center" timestamp="1625003832685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832685" />
+    <state width="1877" height="328" key="GridCell.Tab.1.left" timestamp="1625003832685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832685" />
+    <state width="1877" height="328" key="GridCell.Tab.1.right" timestamp="1625003832685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625003832685" />
+    <state x="171" y="258" key="IDE.errors.dialog" timestamp="1617047773739">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="171" y="258" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617047773739" />
+    <state x="400" y="182" key="Maven.ArtifactSearchDialog" timestamp="1624869350484">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="400" y="182" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1624869350484" />
+    <state x="58" y="172" key="SettingsEditor" timestamp="1624428778872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="58" y="172" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1624428778872" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1624441435454">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1624441435454" />
+    <state x="101" y="100" width="1373" height="847" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1625001781091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="101" y="100" width="1373" height="847" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625001781091" />
+    <state x="915" y="62" width="912" height="656" key="dock-window-1" timestamp="1624871539083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="915" y="62" width="912" height="656" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1624871539083" />
+    <state x="421" y="184" key="new project wizard" timestamp="1624873655526">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="421" y="184" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1624873655526" />
+    <state x="243" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1624428103819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="243" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1624428103819" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gen/antlr/GenListener.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MMain.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/impl/MyBaseVisitor.java</url>
+          <line>289</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/impl/MyBaseVisitor.java</url>
+          <line>282</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
